@@ -4,14 +4,12 @@ def common_exists file
   @common_path ||= File.join Dir.pwd, 'modules', 'source', 'common'
   path = File.join @common_path, file + '.md'
 
-  puts "Path is: #{path}"
-
   File.exists?(path) ? path : false
 end
 
 def process_include markdown
-  # ![filename]
-  markdown.gsub(/\!\[(.*?)\]/m) do
+  # !![filename]
+  markdown.gsub(/\!!\[(.*?)\]/m) do
     path = common_exists $1
     path ? File.read(path) : ''
   end

@@ -1,3 +1,3 @@
-![introduction]
+!![introduction]
 
-In this module, we will be automating a native iOS app using Ruby with appium.
+In this module, we'll be preparing to automate a native iOS app using appium with Ruby.

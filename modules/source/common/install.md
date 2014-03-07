@@ -1,4 +1,5 @@
-This document is written for OS X Version 10.9.2.
+This document is written for OS X 10.9 or better.
+10.9.2 has known problems when automating iOS.
 
 Install Xcode 5.0.2.
 
@@ -6,30 +7,31 @@ Install the command line build tools. (Xcode -> Preferences -> Downloads).
 
 Alternatively, download them directly from [Apple](https://developer.apple.com/downloads/index.action).
 
-We'll be testing on the iOS 7 simulator.
+We'll be testing on the iOS 7 iPhone simulator.
 
-Reinstall Ruby if you didn't set this symlink and have FFI issues.
-
-- Install Java 7 if there's no Java on the system.
+- Install Java 7.
   - [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 - Install the latest Ruby.
 
-`$ \curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0`
+```
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ rvm install ruby
+```
 
 - Make sure RVM is using the correct Ruby by default
 
 ```
 $ rvm list
-$ rvm --default use 2.0.0
+$ rvm --default use 2.1.1
 ```
 
-- If you have an old ruby, you can installing Ruby 2.0 instead
+- If you have an old ruby/rvm, you can upgrade with
 
 ```
 $ rvm get head
 $ rvm autolibs homebrew
-$ rvm install 2.0.0
+$ rvm install ruby
 ```
 
 - Check that it's installed properly by printing the ruby version.
